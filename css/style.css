@@ -308,28 +308,30 @@ nav ul {
 
   .videoMain {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 400px auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     justify-items: center;
     grid-row-gap: 10px;
     grid-column-gap: 20px;
   }
 
-  .videoMain video {
-    grid-column-start: 1;
-    grid-row-start: 1;
+  .videoMain .lyrics {
+    grid-column: 1;
+    grid-row: 2;
   }
 
-  .videoMain .lyrics {
-    grid-column: 2 / 2;
-    grid-row: 1 / span 2;
+  .videoMain #timestamp-buttons {
+    grid-column-start: 1;
+    grid-row-start: 1;
   }
 
   #timestamp-buttons {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: start;
+    flex-direction: column;
+    align-items: center;
     gap: 10px;
     margin-top: 10px;
   }
@@ -358,27 +360,32 @@ nav ul {
     font-size: 17px;
   }
 
-/*PHONE, NEEDS TO BE ABOVE THIS IS JUST TO MAKE IT EASIER TO SWITCH TO MOBILE FIRST*/
-  @media screen and (max-width: 767px) {
-    .column:nth-child(even) {
-      max-height: 100px;
-    }
-    
-    .column:nth-child(odd) {
-      max-height: 300px;
-    }
+  #danImg2 {
+    opacity: 0.5;
+  }
 
-    .column img {
-      max-width: 400px;
-      overflow: hidden;
-    }
-  } 
+  .column img {
+    max-width: 400px;
+    overflow: hidden;
+  }
+
+  .column:nth-child(even) {
+    max-height: 100px;
+  }
+  
+  .column:nth-child(odd) {
+    max-height: 300px;
+  }
 
 
 
 
 /* Tablet styles (min-width 768px) */
 @media screen and (min-width: 768px) {
+  .column img {
+    max-width: none;
+  }
+
   .row {
     flex-direction: row;
 }
@@ -390,10 +397,12 @@ nav ul {
 }
 
 .column:nth-child(even) {
+  min-height: none;
   max-height: 400px;
 }
 
 .column:nth-child(odd) {
+  min-height: none;
   max-height: 400px;
 }
 
@@ -547,6 +556,36 @@ nav ul {
       grid-area: 5 / 4 / 7 / 5; 
     }
 
+    .videoMain {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      justify-items: center;
+      grid-row-gap: 10px;
+      grid-column-gap: 20px;
+    }
+  
+    .videoMain .lyrics {
+      grid-column: 2 / 2;
+      grid-row: 1;
+    }
+  
+    .videoMain #timestamp-buttons {
+      grid-column-start: 1;
+      grid-row-start: 1;
+    }
+
 } 
+
+
+@media (prefers-reduced-motion) {
+  a {
+    transition: none;
+  }
+
+  .overlay {
+    transition: none;
+  }
+}
 
 

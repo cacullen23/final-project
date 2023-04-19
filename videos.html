@@ -16,22 +16,17 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="members.html">Member Bios</a></li>
-                <li id="current"><a href="videos.html">Videos</a></li>
+                <li id="current"><a href="videos.html">Music</a></li>
             </ul>
             <a class="logo" href="index.html"><h3>Cold Brew 42</h3><img src="images/logo.png" alt="Logo"></a>
         </nav>
     </header>
 <main id="main">
     <h1 class="videosText">
-        Videos
+        Music
     </h1>
 
     <div class="videoMain">
-
-      <video id="my-video" width="640" height="360" controls autoplay>
-        <source src="videos/CB42 Strawberry Festival Aug 2021.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
 
       <div id="lyrics-what-i-got" class="lyrics">
         Current Song: Sublime - What I Got <br> <br>
@@ -324,6 +319,11 @@
       </div>
   
       <div class="videoMain" id="timestamp-buttons">
+        <audio id="my-audio" width="640" height="360" autoplay controls>
+            <source src="videos/Audio - CB42 Strawberry Festival Aug 2021.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+          </audio>
+        <a href="https://www.youtube.com/watch?v=Nw1NJJCXNTM&ab_channel=MichaelFarley">Watch Performance on YouTube</a>
         <button onclick="goToTimestamp(0)"><p>Sublime - What I Got (0:00)</p></button>
         <button onclick="goToTimestamp(173)"><p>Green Day - Warning (2:53)</p></button>
         <button onclick="goToTimestamp(458)"><p>R.E.M. - It’s the End of the World as We Know It (and I Feel Fine) (7:38)</p></button>
@@ -338,15 +338,15 @@
     </div>
 
     <script>
-        var myVideo = document.getElementById("my-video");
+        var myAudio = document.getElementById("my-audio");
       
         function goToTimestamp(timestamp) {
-          myVideo.currentTime = timestamp;
+          myAudio.currentTime = timestamp;
         }
       
-        myVideo.addEventListener("timeupdate", function() {
-          var currentTime = myVideo.currentTime;
-      
+        showLyrics("lyrics-what-i-got")
+        myAudio.addEventListener("timeupdate", function() {
+          var currentTime = myAudio.currentTime;
           if (currentTime >= 0 && currentTime < 173) {
             showLyrics("lyrics-what-i-got")
           } else if (currentTime >= 173 && currentTime < 458) {
@@ -386,7 +386,8 @@
 
 </main>
     <footer>
-        Website by Carolyn Cullen
+        Website by Carolyn Cullen<br>
+        Contact: carecullen@gmail.com
     </footer>
 </body>
 </html>
