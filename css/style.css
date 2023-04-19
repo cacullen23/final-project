@@ -91,7 +91,7 @@ h3 {
   top: 0px;
   width: auto;
   height: auto;
-  background-color:  #95B0B7; 
+  background-color:  #425C61; 
   padding: 5px;
   z-index: 9999;
 }
@@ -243,7 +243,7 @@ nav {
 .memberGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(6, minmax(0, 400px));
+  grid-template-rows: repeat(6, fit-content(minmax(0, 400px)));
   grid-column-gap: 15px;
   grid-row-gap: 15px;
   justify-content: space-evenly;
@@ -259,6 +259,7 @@ nav {
   .memberGrid p {
     font-size: 18px;
     padding: 30px;
+    max-height: 100%;
     letter-spacing: 1px;
     line-height: 30px;
     overflow: hidden;
