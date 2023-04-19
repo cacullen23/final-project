@@ -223,12 +223,14 @@ mark {
 }
 
 /* Center the nav buttons on top of each other */
-nav ul {
+nav {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
 }
+
+
 
 
 .memberText, .videosText {
@@ -377,9 +379,6 @@ nav ul {
     max-height: 300px;
   }
 
-
-
-
 /* Tablet styles (min-width 768px) */
 @media screen and (min-width: 768px) {
   .column img {
@@ -390,11 +389,11 @@ nav ul {
     flex-direction: row;
 }
 
-nav ul {
+/* nav ul {
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-}
+} */
 
 .column:nth-child(even) {
   min-height: none;
@@ -474,10 +473,28 @@ nav ul {
   #danImg3 { 
     grid-area: 9 / 2 / 10 / 3;
   }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
 }
 
 /* Laptop/desktop specific styles */
 @media screen and (min-width: 1200px) {
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  nav ul {
+    flex-direction: row;
+  }
+
   .column:nth-child(even) {
     min-height: 100px;
     max-height: 200px;
@@ -576,7 +593,6 @@ nav ul {
     }
 
 } 
-
 
 @media (prefers-reduced-motion) {
   a {
