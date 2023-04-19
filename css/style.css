@@ -257,7 +257,7 @@ nav {
   }
 
   .memberGrid p {
-    font-size: 23px;
+    font-size: 18px;
     padding: 30px;
     letter-spacing: 1px;
     line-height: 30px;
@@ -381,6 +381,10 @@ nav {
 
 /* Tablet styles (min-width 768px) */
 @media screen and (min-width: 768px) {
+  .memberGrid p {
+    font-size: 23px;
+  }
+  
   .column img {
     max-width: none;
   }
